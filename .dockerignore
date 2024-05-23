@@ -1,0 +1,22 @@
+# Ignorar archivos y directorios específicos
+node_modules/
+dist/
+logs/
+
+# Ignorar archivos con extensiones específicas
+*.log
+*.txt
+*.md
+
+# Ignorar archivos ocultos
+.*
+
+# Ignorar archivos generados por el sistema
+.DS_Store
+Thumbs.db
+Dockerfile
+.dockerignore
+npm-debug.log
+README.md
+.next
+.git
