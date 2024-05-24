@@ -15,7 +15,6 @@ const MapView: React.FC<MapViewProps> = ({ hotels }) => {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const markersRef = useRef<mapboxgl.Marker[]>([]); // Referencia para almacenar marcadores
-  console.log(process.env.MAPBOX_TOKEN);
   useEffect(() => {
     if (mapContainerRef.current && !mapRef.current) {
       const map = new mapboxgl.Map({
