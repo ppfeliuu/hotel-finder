@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Hotel } from '../api/api'; // Importa la interfaz Hotel
 import { MapContainer } from '../styles/components/MapViewStyled';
 
-mapboxgl.accessToken = 'pk.eyJ1IjoicGZlbGl1IiwiYSI6ImNsZ20wdGw0aTAxYnAzZW8yMjBrM2VpaTMifQ.XXe7WnXpinnw-wZtNSpcfw'; // Reemplaza con tu token de Mapbox
+mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || '';
 
 interface MapViewProps {
   hotels: Hotel[];
@@ -15,7 +15,7 @@ const MapView: React.FC<MapViewProps> = ({ hotels }) => {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const markersRef = useRef<mapboxgl.Marker[]>([]); // Referencia para almacenar marcadores
-
+  console.log(process.env.MAPBOX_TOKEN);
   useEffect(() => {
     if (mapContainerRef.current && !mapRef.current) {
       const map = new mapboxgl.Map({
