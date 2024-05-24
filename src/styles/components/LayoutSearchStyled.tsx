@@ -12,8 +12,9 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #343a40;
+  background-color: #0c0c0c;
   color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 `;
 
 export const MainContainer = styled.main`

@@ -13,8 +13,8 @@ const Header: React.FC<HeaderProps> = ({ onSortChange }) => {
     <HeaderContainer>
       <h1>Hoteles</h1>
       <SortSelect onChange={(e) => onSortChange(e.target.value)}>
-        <option value="price-asc">Precio: Bajo a Alto</option>
-        <option value="price-desc">Precio: Alto a Bajo</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
       </SortSelect>
     </HeaderContainer>
   );

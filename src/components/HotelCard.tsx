@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+
 import {
   CardContainer,
   ImageContainer,
@@ -49,7 +49,7 @@ const HotelCard: React.FC<HotelCardProps> = ({ hotel }) => {
             <span>{hotel.star}</span>
           </RatingContainer>
           <Distance>
-            A {hotel.coordinates.latitude.toFixed(2)} km de la ubicación
+            {hotel.coordinates.latitude.toFixed(2)} km from location
           </Distance>
           <PriceContainer>
             <FinalPrice>${hotel.finalPrice} pp</FinalPrice>

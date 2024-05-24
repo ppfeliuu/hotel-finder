@@ -1,19 +1,26 @@
-import { useSession } from 'next-auth/react'
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+// LoginPage.tsx
+'use client';
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useSession, signIn } from "next-auth/react";
 import { LoginBox, LoginButton, LoginContainer, Title } from "@/src/styles/app/LoginStyled";
-import { Session } from 'next-auth';
+
+interface HomeProps {
+  session: any;
+  loading: boolean;
+}
 
 const LoginPage = () => {
-  const session: Session | null = useSession().data ?? null;
-  const loading: boolean = useSession().status === "loading";
   const router = useRouter();
+
+  const session = null;
+  const loading = false;
 
   useEffect(() => {
     if (session) {
       router.push('/search');
     }
-  }, [session, router]);
+  }, [router, session]);
 
   if (loading) return <p>Loading...</p>;
 
@@ -21,12 +28,12 @@ const LoginPage = () => {
     <LoginContainer>
       <LoginBox>
         <Title>Login</Title>
-        <LoginButton onClick={() => router.push('/api/auth/signin')}>
+        <LoginButton onClick={() => router.push('/search')}>
           Sign in with Auth0
         </LoginButton>
       </LoginBox>
     </LoginContainer>
-  )
-}
+  );
+};
 
-export default LoginPage
+export default LoginPage;
